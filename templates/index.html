@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form with Dynamic Inputs</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            let inputCount = 1;
+            $('#addInput').click(function() {
+                inputCount++;
+                $('#dynamicInputs').append(`<input type="text" name="input${inputCount}" placeholder="Input ${inputCount}"><br>`);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Dynamic Input Form</h1>
+    <form method="POST" action="/">
+        <div id="dynamicInputs">
+            <input type="text" name="input1" placeholder="Input 1"><br>
+        </div>
+        <button type="button" id="addInput">Add Input</button>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
